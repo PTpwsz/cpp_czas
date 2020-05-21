@@ -1,6 +1,10 @@
 #include <iostream>
 #include <chrono>
 #include <cmath>
+
+#include <ctime>
+#include <ratio>
+
 using namespace std;
 
 void function()
@@ -15,12 +19,20 @@ void function()
 
 int main()
 {
-    // odczytaj czas poczatkowy
+    using namespace std::chrono;
+    typedef std::chrono::minutes min;
+    
+    steady_clock::time_point czas1 = steady_clock::now();
     function();
-    // odczytaj czas koncowy
+    steady_clock::time_point czas2 = steady_clock::now();
 
-    auto duration = 0; // w miejsce 0 wpisz odpowiednie wyrazenie z duration przeliczajacym na minuty
+    duration<double> czas = duration_cast<duration<double>>(czas2 - czas1);
+    
+    min d = std::chrono::duration_cast<min>(czas);//przelicza na minuty
 
-    std::cout << "Czas wykonania: = " << duration << endl;
+    auto duration = czas.count();//zapisuje do starej w sekundach
+
+    std::cout << d.count() << " min("<<duration<<"s)\n";
     return 0;
+
 }
