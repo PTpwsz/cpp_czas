@@ -1,23 +1,26 @@
 #include <iostream>
-#include <omp.h>
-#include <unistd.h>
-
+#include <chrono>
+#include <cmath>
 using namespace std;
 
-int main(){
-    #pragma omp parallel num_threads(8)
+void function()
+{   // funkcja wykonuje jakies bezsensowne, ale obciazajace obliczenia
+    double number { 0. };
+    #pragma omp parallel for reduction(+:number) num_threads(4)
+    for( long long i = 0; i != 200000000; ++i )
     {
-
-        int ID = omp_get_thread_num();
-        
-        cout << "Watek to: "<< ID << endl;
-        cout << "sdf";
+       number += sin( static_cast<double>(i) / (i+1) );
     }
-
-    //usleep(1000000);
 }
 
+int main()
+{
+    // odczytaj czas poczatkowy
+    function();
+    // odczytaj czas koncowy
 
+    auto duration = 0; // w miejsce 0 wpisz odpowiednie wyrazenie z duration przeliczajacym na minuty
 
-
-//time.exe -f "czas trwania: %E" .\prog.exe
+    std::cout << "Czas wykonania: = " << duration << endl;
+    return 0;
+}

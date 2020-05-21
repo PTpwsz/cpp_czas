@@ -37,6 +37,26 @@
         "problemMatcher": [
           "$gcc"
         ]
+      },
+      {
+        "label": "zalczenie01",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-std=c++17",
+          "-fopenmp",
+          "-Wall",
+          "-o",
+          "prog",
+          "Zaliczenie/main.cpp"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [
+          "$gcc"
+        ]
       }
     ]
   }
