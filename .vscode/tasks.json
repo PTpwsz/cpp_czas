@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "program01",
+        "type": "shell",
+        "command": "g++",
+        "args": ["-std=c++17", "-fopenmp", "-Wall", "-o", "prog", "01/main.cpp"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
