@@ -1,16 +1,21 @@
+#include <omp.h>
 #include <iostream>
-#include <chrono>
-#include <cmath>
-
-#include <ctime>
-#include <ratio>
-
+#include <random>
 using namespace std;
 
-
+void v(long n)
+{
+    random_device rd;
+    uniform_int_distribution<int> dist(1, 20);
+    long sum = 0;
+    long los = dist(rd);
+    for (long i = 0; i < los * n; ++i) sum += i;
+}
 
 int main()
 {
-cout<<"adsf";
-
+    const long max = 100, factor = 10000000l;
+#pragma omp parallel for schedule(static,1) num_threads(4)
+    for (int i = 0; i < max; ++i)
+        v(factor);
 }
