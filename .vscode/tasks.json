@@ -77,6 +77,86 @@
         "problemMatcher": [
           "$gcc"
         ]
+      },
+      {
+        "label": "zalczenie03_1",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-std=c++17",
+          "-fopenmp",
+          "-Wall",
+          "-o",
+          "prog",
+          "Zaliczenie3/zad1.cpp"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [
+          "$gcc"
+        ]
+      },
+      {
+        "label": "zalczenie03_2",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-std=c++17",
+          "-fopenmp",
+          "-Wall",
+          "-o",
+          "prog",
+          "Zaliczenie3/zad2.cpp"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [
+          "$gcc"
+        ]
+      },
+      {
+        "label": "zalczenie03_3",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-std=c++17",
+          "-fopenmp",
+          "-Wall",
+          "-o",
+          "prog",
+          "Zaliczenie3/zad3.cpp"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [
+          "$gcc"
+        ]
+      },
+      {
+        "label": "zalczenie03_4",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-std=c++17",
+          "-fopenmp",
+          "-Wall",
+          "-o",
+          "prog",
+          "Zaliczenie3/zad4.cpp"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [
+          "$gcc"
+        ]
       }
     ]
   }
